@@ -9,8 +9,8 @@ pipeline {
         stage ('도커 이미지 빌드, 푸시') {
             steps {
                 sh '''
-                docker build -t minsunnn/kakaodev:yellow .
-                docker push minsunnn/kakaodev:yellow
+                sudo docker build -t minsunnn/kakaodev:yellow .
+                sudo docker push minsunnn/kakaodev:yellow
                 '''
             }
         }
