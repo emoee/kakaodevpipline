@@ -1,4 +1,4 @@
-pipline {
+pipeline {
     agent any
     stages {
         stage ('깃 업데이트'){
