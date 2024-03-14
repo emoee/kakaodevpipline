@@ -17,8 +17,8 @@ pipline {
         stage ('쿠버네티스 디플로이 서비스'){
             steps {
                 sh '''
-                kubectl create deploy deploy-yellow --image=minsunnn/kakaodev:yellow
-                kubectl expose deploy deploy-yellow --type=LoadBalancer --port=8004 --target-port=80 -name=deploy-yellow-lb
+                kubectl create deployment deploy-yellow --image=minsunnn/kakaodev:yellow
+                kubectl expose deployment deploy-yellow --type=LoadBalancer --port=8004 --target-port=80 -name=deploy-yellow-lb
                 
                 '''
             }
