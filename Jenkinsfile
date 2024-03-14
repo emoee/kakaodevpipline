@@ -17,9 +17,9 @@ pipline {
         stage ('쿠버네티스 디플로이 서비스'){
             steps {
                 sh '''
-                 ssh 211.183.3.100 'kubectl create deployment deploy-yellow --image=minsunnn/kakaodev:yellow'
-                 ssh 211.183.3.100 'kubectl expose deployment deploy-yellow --type=LoadBalancer --port=8004 --target-port=80 --name=deploy-yellow-lb'
-                
+                ssh 211.183.3.100 'kubectl create deploy deploy-yellow --image=brian24/kakaodev:yellow'
+                ssh 211.183.3.100 'kubectl expose deploy deploy-yellow --type=NodePort --port=8004 --target-port=80 --name=deploy-yellow-np'
+
                 '''
             }
         }
